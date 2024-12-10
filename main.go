@@ -44,13 +44,13 @@ func main() {
 		panic(err)
 	}
 
-	location := "London"
+	locationCode := "London"
 	if len(os.Args) >= 2 {
-		location = os.Args[1]
+		locationCode = os.Args[1]
 	}
 
 	apiKey := os.Getenv("API_KEY")
-	response, err := http.Get("https://api.weatherapi.com/v1/forecast.json?key=" + apiKey + "&q=" + location + "&days=1&aqi=no&alerts=no")
+	response, err := http.Get("https://api.weatherapi.com/v1/forecast.json?key=" + apiKey + "&q=" + locationCode + "&days=1&aqi=no&alerts=no")
 
 	if err != nil {
 		panic(err)
